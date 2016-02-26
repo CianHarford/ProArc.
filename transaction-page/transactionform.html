@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE HTML>
+<html> 
 <head>
-
-    <meta charset="utf-8">
+     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -28,18 +26,25 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
 </head>
-
 <body>
-    
-    
-    <script src="SignUpValidation.js"></script>
-
+   <script src="CreditCardvalidation.js"></script>
+  <script>
+    $(function() {
+        $('input').validateCreditCard(function(result) {
+            $('.log').html('Card type: ' + (result.card_type == null ? '-' : result.card_type.name)
+                     + '<br>Valid: ' + result.valid
+                     + '<br>Length valid: ' + result.length_valid
+                     + '<br>Luhn valid: ' + result.luhn_valid);
+        });
+    });
+</script>
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
         <div class="container topnav">
             <!-- Brand and toggle get grouped for better mobile display -->
-           <div class="navbar-header">
+            <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -73,49 +78,79 @@
     <div class="intro-header">
         <div class="container">
 <h1>Sign Up</h1>
- <p>Use tab keys to move from one input field to the next.</p>  
-<form name='registration' onSubmit="return formValidation();">  
-<ul>  
-<li><label for="userid">ID:</label></li>
-<li><input type="text" name="userid" size="12" /></li>  
-<li><label for="passid">Password:</label></li>  
-<li><input type="password" name="passid" size="12" /></li>  
-<li><label for="username">Username:</label>  
-<li><input type="text" name="username" size="50" /></li>  
-<li><label for="address">Address:</label></li>  
-<li><input type="text" name="address" size="50" /></li>  
-<li><label for="role">Job Role:</label></li>  
-<li><select name="role">  
-<option selected="" value="Default">(Please select a role)</option>  
-<option value="PM">Project Manager</option>  
-<option value="EL">Electrician</option>  
-<option value="PL">Plumber</option>  
-<option value="CA">Carpenter</option>  
-<option value="PA">Plaster</option>
-<option value="BU">Builder</option>
-</select></li>  
-  
-<li><label for="email">Email:</label></li>  
-<li><input type="text" name="email" size="50" /></li>  
-<li><label id="gender">Sex:</label></li>  
-<li><input type="radio" name="msex" value="Male" /><span>Male</span></li>  
-<li><input type="radio" name="fsex" value="Female" /><span>Female</span></li> 
-<li><input type="submit" name="submit" value="Submit" /></li>  
-</ul>  
+ 
+<?php echo $_POST["name"]; ?>
+<form action="Validation.php" method="post">
+Title:<select>
+  <option value="Mr.">Mr.</option>
+  <option value="Mrs.">Mrs.</option>
+  <option value="Ms.">Ms.</option>
+  <option value="Dr.">Dr.</option>
+</select>Name:<input type="text" name="name"> <br>
+
+</br>
+Card Type:<input type="text" name="card_type"><br>
+</br>
+Card Number:<input type="text" name="card_number"><br> 
+</br> 
+Billing Address line 1:<input type="text" name="address1"><br>
+</br>
+Billing Address line 2:<input type="text" name="address2"><br>
+</br>
+Post code:<input type="text" name="postcode"><br>
+</br>
+County:<select>
+  <option value="Antrim">Antrim</option>
+  <option value="Armagh">Armagh</option>
+  <option value="Carlow">Carlow</option>
+  <option value="Cavan">Cavan</option>
+<option value="Clare">Clare</option>
+  <option value="Cork">Cork</option>
+  <option value="Donegal">Donegal</option>
+  <option value="Down">Down</option>
+<option value="Dublin">Dublin</option>
+  <option value="Fermanagh">Fermanagh</option>
+  <option value="Galway">Galway</option>
+  <option value="Kerry">Kerry</option>
+<option value="Kildare">Kildare</option>
+  <option value="Kilkenny">Kilkenny</option>
+  <option value="Laois">Laois</option>
+  <option value="Leitrim">Leitrim</option>
+<option value="Limerick">Limerick</option>
+  <option value="Londonderry">Londonderry</option>
+  <option value="Longford">Longford</option>
+  <option value="Louth">Louth</option>
+<option value="Mayo">Mayo</option>
+  <option value="Meath">Meath</option>
+  <option value="Monaghan">Monaghan</option>
+  <option value="Offaly">Offaly</option>
+<option value="Roscommon">Roscommon</option>
+  <option value="Sligo">Sligo</option>
+  <option value="Tipperary">Tipperary</option>
+  <option value="Tyrone">Tyrone</option>
+<option value="Waterford">Waterford</option>
+  <option value="Westmeath">Westmeath</option>
+  <option value="Wexford">Wexford</option>
+  <option value="Wicklow">Wicklow</option>
+</select><br>
+</br>
+Enter Image Text
+<input name="captcha" type="text">
+<img src="captcha.php" /><br>
+</br>
+<input name="submit" type="submit" value="Submit">
+
 </form>
+
+ </div>
 
         </div>
         <!-- /.container -->
 
     </div>
-    <!-- /.intro-header -->
 
-    <!-- Page Content -->
-
-
-
-    <!-- Footer -->
-    <footer>
+<footer>
+        
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -136,7 +171,7 @@
                             <a href="#contact">Contact</a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted small">Copyright &copy; ProArc 2016. All Rights Reserved</p>
+                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
                 </div>
             </div>
         </div>
@@ -147,7 +182,5 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
 </body>
-
 </html>

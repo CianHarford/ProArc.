@@ -32,21 +32,19 @@
 
 <body>
     
-    
-    <script src="SignUpValidation.js"></script>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
         <div class="container topnav">
             <!-- Brand and toggle get grouped for better mobile display -->
-           <div class="navbar-header">
+            <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="#">ProArc</a>
+                <a class="navbar-brand topnav" href="#">Start Bootstrap</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -72,37 +70,18 @@
     <a name="about"></a>
     <div class="intro-header">
         <div class="container">
-<h1>Sign Up</h1>
- <p>Use tab keys to move from one input field to the next.</p>  
-<form name='registration' onSubmit="return formValidation();">  
-<ul>  
-<li><label for="userid">ID:</label></li>
-<li><input type="text" name="userid" size="12" /></li>  
-<li><label for="passid">Password:</label></li>  
-<li><input type="password" name="passid" size="12" /></li>  
-<li><label for="username">Username:</label>  
-<li><input type="text" name="username" size="50" /></li>  
-<li><label for="address">Address:</label></li>  
-<li><input type="text" name="address" size="50" /></li>  
-<li><label for="role">Job Role:</label></li>  
-<li><select name="role">  
-<option selected="" value="Default">(Please select a role)</option>  
-<option value="PM">Project Manager</option>  
-<option value="EL">Electrician</option>  
-<option value="PL">Plumber</option>  
-<option value="CA">Carpenter</option>  
-<option value="PA">Plaster</option>
-<option value="BU">Builder</option>
-</select></li>  
-  
-<li><label for="email">Email:</label></li>  
-<li><input type="text" name="email" size="50" /></li>  
-<li><label id="gender">Sex:</label></li>  
-<li><input type="radio" name="msex" value="Male" /><span>Male</span></li>  
-<li><input type="radio" name="fsex" value="Female" /><span>Female</span></li> 
-<li><input type="submit" name="submit" value="Submit" /></li>  
-</ul>  
-</form>
+
+            <div align="center">
+            <h1>Welcome To ProArc</h1>
+            <br>
+            <h2>This is your home dashboard</h2>
+            </div>
+
+            <div align="right">
+            <form action="index.html">
+            <input type="submit" value="Log Out"></input>
+            </form>
+            </div>
 
         </div>
         <!-- /.container -->
@@ -136,7 +115,7 @@
                             <a href="#contact">Contact</a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted small">Copyright &copy; ProArc 2016. All Rights Reserved</p>
+                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
                 </div>
             </div>
         </div>
