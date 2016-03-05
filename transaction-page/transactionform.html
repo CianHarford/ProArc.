@@ -29,17 +29,7 @@
 
 </head>
 <body>
-   <script src="CreditCardvalidation.js"></script>
-  <script>
-    $(function() {
-        $('input').validateCreditCard(function(result) {
-            $('.log').html('Card type: ' + (result.card_type == null ? '-' : result.card_type.name)
-                     + '<br>Valid: ' + result.valid
-                     + '<br>Length valid: ' + result.length_valid
-                     + '<br>Luhn valid: ' + result.luhn_valid);
-        });
-    });
-</script>
+  
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
         <div class="container topnav">
@@ -77,7 +67,7 @@
     <a name="about"></a>
     <div class="intro-header">
         <div class="container">
-<h1>Sign Up</h1>
+
  
 <?php echo $_POST["name"]; ?>
 <form action="Validation.php" method="post">
