@@ -1,0 +1,28 @@
+
+
+curl https://svcs.sandbox.paypal.com/AdaptivePayments/Pay \
+  -s \
+  --insecure \
+  -H "X-PAYPAL-SECURITY-USERID: caller_1312486258_biz_api1.gmail.com" \
+  -H "X-PAYPAL-SECURITY-PASSWORD: 1312486294" \
+  -H "X-PAYPAL-SECURITY-SIGNATURE: AbtI7HV1xB428VygBUcIhARzxch4AL65.T18CTeylixNNxDZUu0iO87e" \
+  -H "X-PAYPAL-REQUEST-DATA-FORMAT: JSON" \
+  -H "X-PAYPAL-RESPONSE-DATA-FORMAT: JSON" \
+  -H "X-PAYPAL-APPLICATION-ID: APP-80W284485P519543T" \
+  -d '{
+        "actionType": "PAY",
+        "currencyCode": "USD",
+        "receiverList": {
+          "receiver": [{
+            "amount": "1.00",
+            "email": "rec1_1312486368_biz@gmail.com"
+          }]
+        },
+        "returnUrl": "http://www.example.com/success.html",
+        "cancelUrl": "http://www.example.com/failure.html",
+        "requestEnvelope": {
+          "errorLanguage": "en_US",
+          "detailLevel": "ReturnAll"
+        }
+      }'
+

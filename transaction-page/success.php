@@ -1,6 +1,6 @@
+<!doctype html>
+<html>
 
-<!DOCTYPE HTML>
-<html> 
 <head>
      <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://www.paypalobjects.com/js/external/dg.js" type="text/javascript"></script>
+    
     <title>Landing Page - Start Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS -->
@@ -31,10 +31,7 @@
 
 </head>
 <body>
-<?php require_once ("paypalfunctions.php"); 
-                     ("checkout.php");
-                      ("cancel.php");
-?>
+
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
         <div class="container topnav">
@@ -73,102 +70,15 @@
     <div class="intro-header">
         <div class="container">
 
- 
+<h2>Transaction completed</h2>
 
-
-<form action="https://www.sandbox.paypal.com/webapps/adaptivepayment/flow/pay" target="PPDGFrame" class="standard">
-</br>
-
-Title:<select>
-  <option value="Mr.">Mr.</option>
-  <option value="Mrs.">Mrs.</option>
-  <option value="Ms.">Ms.</option>
-  <option value="Dr.">Dr.</option>
-</select>Name:<input type="text" name="name"> <br>
-
-</br>
-
-Card Type :<select tabindex="5" id="CardType" style="margin-left: 10px;">
- <option value="VISA" name="VISA">Visa</option>
-  <option value="American Express" name="American Express">American Express.</option>
-  <option value="Mastercard" name="MasterCard">Mastercard</option>
-   <option value="Maestro" name="Maestro">Maestro</option>
-    <option value="LaserCard"name="LaserCard">Laser</option>
-  </select>
-  </br>
-  </br>
-  Credit Card Number :<input type="text" name="cardnumber" id="cardnumber" placeholder="1234 5678 9012 3456"> <input type="submit" name="submit" size="20" value="submit" tabindex="13" alt="Click to submit credit card for validation">
-</br>
-</br> 
-Billing Address line 1:<input type="text" name="address1"><br>
-</br>
-Billing Address line 2:<input type="text" name="address2"><br>
-</br>
-Post code:<input type="text" name="postcode"><br>
-</br>
-County:<select>
-  <option value="Antrim">Antrim</option>
-  <option value="Armagh">Armagh</option>
-  <option value="Carlow">Carlow</option>
-  <option value="Cavan">Cavan</option>
-<option value="Clare">Clare</option>
-  <option value="Cork">Cork</option>
-  <option value="Donegal">Donegal</option>
-  <option value="Down">Down</option>
-<option value="Dublin">Dublin</option>
-  <option value="Fermanagh">Fermanagh</option>
-  <option value="Galway">Galway</option>
-  <option value="Kerry">Kerry</option>
-<option value="Kildare">Kildare</option>
-  <option value="Kilkenny">Kilkenny</option>
-  <option value="Laois">Laois</option>
-  <option value="Leitrim">Leitrim</option>
-<option value="Limerick">Limerick</option>
-  <option value="Londonderry">Londonderry</option>
-  <option value="Longford">Longford</option>
-  <option value="Louth">Louth</option>
-<option value="Mayo">Mayo</option>
-  <option value="Meath">Meath</option>
-  <option value="Monaghan">Monaghan</option>
-  <option value="Offaly">Offaly</option>
-<option value="Roscommon">Roscommon</option>
-  <option value="Sligo">Sligo</option>
-  <option value="Tipperary">Tipperary</option>
-  <option value="Tyrone">Tyrone</option>
-<option value="Waterford">Waterford</option>
-  <option value="Westmeath">Westmeath</option>
-  <option value="Wexford">Wexford</option>
-  <option value="Wicklow">Wicklow</option>
-</select><br>
-</br>
-Enter Image Text
-<input name="captcha" type="text">
-<img src="captcha.php" /><br>
-</br>
-<label for="buy">Buy Now:</label>
-<input type="image" id="submitBtn" value="Pay with PayPal" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif">
-<input id="type" type="hidden" name="expType" value="light">
-<input id="paykey" type="hidden" name="paykey" value="">
-</br>
+<form action="submit" value="Try Again">
+    
+    <h3> Transaction was successful your purchase is now complete </h3>
+    <br> <input type="button" value="Return To Home" src="http://pro-arc-x14322731.c9users.io/transaction-page/home.php">
+    
 </form>
-
-<!-- Add Digital goods in-context experience. Ensure that this script is added before the closing of html body tag -->
-
-<script>
-
-	var dg = new PAYPAL.apps.DGFlow(
-	{
-		trigger: 'paypal_submit',
-		expType: 'instant'
-		 //PayPal will decide the experience type for the buyer based on his/her 'Remember me on your computer' option.
-	});
-
-</script>
-
-<script type="text/javascript" charset="utf-8">
-var embeddedPPFlow = new PAYPAL.apps.DGFlow({trigger: 'submitBtn'});
-</script>
- </div>
+</div>
 
         </div>
         <!-- /.container -->
@@ -208,6 +118,4 @@ var embeddedPPFlow = new PAYPAL.apps.DGFlow({trigger: 'submitBtn'});
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-</body>
-
 </html>
