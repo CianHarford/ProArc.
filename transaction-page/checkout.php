@@ -53,7 +53,7 @@ if ( $PaymentOption == "PayPal")
 
         
 		$items = array();
-		$items[] = array('name' => 'Item Name', 'amt' => $paymentAmount, 'qty' => 1);
+		$items[] = array('name' => '1 year membership', 'amt' => $paymentAmount, 'qty' => 1);
 	
 		//::ITEMS::
 		
